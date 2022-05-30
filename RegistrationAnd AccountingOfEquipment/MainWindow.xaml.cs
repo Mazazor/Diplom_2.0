@@ -91,7 +91,7 @@ namespace RegistrationAnd_AccountingOfEquipment
 
         private void Button_Add1_Click(object sender, RoutedEventArgs e)
         {
-            SoftwareWindow equipmentwindow = new SoftwareWindow();
+            SoftwareWindow equipmentwindow = new SoftwareWindow(null);
             equipmentwindow.Show();
             
         }

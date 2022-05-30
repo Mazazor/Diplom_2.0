@@ -40,18 +40,18 @@
                                 <TextBlock Grid.Row="6" Margin="5,5,5,5" Text="Срок действий(мес.)"/>
                                 <TextBlock Grid.Row="7" Margin="5,5,5,5" Text="Стоимость(руб.)"/>
 
-                                <TextBox Grid.Row="1" Grid.Column="1" Margin="5,5,5,5" HorizontalAlignment="Left" Width="250"/>
+                                <TextBox Grid.Row="1" Text="{Binding Name}" Grid.Column="1" Margin="5,5,5,5" HorizontalAlignment="Left" Width="250"/>
                                 <StackPanel Grid.Row="2" Grid.Column="1" Margin="5,5,5,5" HorizontalAlignment="Left" Orientation="Horizontal">
-                                    <ComboBox  Width="150"></ComboBox>
-                                    <TextBlock Margin="5,0,0,0" x:Name="divasetabadd" TextDecorations="Underline" Text="Добавить" Foreground="red"/>
+                                    <ComboBox  Width="150" SelectedItem="{Binding SofrwareType}" DisplayMemberPath="Name" x:Name="combobox1"/>
+                                    <Button Margin="5,0,0,0" x:Name="softwaretypeadd"  Content="Добавить" Foreground="red" Click="softwaretypeadd_Click"/>
                                 </StackPanel>
-                                <TextBox Grid.Row="4" Grid.Column="1" Margin="5,5,5,5" HorizontalAlignment="Left" Width="150"/>
+                                <TextBox Grid.Row="4" Text="{Binding LicenseKey}" Grid.Column="1" Margin="5,5,5,5" HorizontalAlignment="Left" Width="150"/>
                                 <DatePicker Grid.Row="5" Grid.Column="1" Margin="5,5,5,5" HorizontalAlignment="Left"  Width="150" IsDropDownOpen="False" SelectedDateFormat="Short" />
                                 <StackPanel Grid.Row="6" Grid.Column="1" Margin="5,5,5,5" HorizontalAlignment="Left"  Orientation="Horizontal">
-                                    <TextBox Width="150" Text="0"/>
+                                    <TextBox Width="150"  Text="0"/>
                                     <TextBlock Margin="5,0,0,0" TextDecorations="Underline" Text="Истёкла лицензия" Foreground="red"/>
                                 </StackPanel>
-                                <TextBox Grid.Row="7" Grid.Column="1" Margin="5,5,5,5" Text="0" HorizontalAlignment="Left" Width="150"/>
+                                <TextBox Grid.Row="7" Text="{Binding Price}" Grid.Column="1" Margin="5,5,5,5" HorizontalAlignment="Left" Width="150"/>
                             </Grid>
                         </StackPanel>
                     </TabItem.Content>

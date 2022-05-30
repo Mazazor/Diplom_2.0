@@ -19,9 +19,22 @@ namespace RegistrationAnd_AccountingOfEquipment
     /// </summary>
     public partial class SoftwareWindow : Window
     {
-        public SoftwareWindow()
+        private Software _software = new Software();
+        public SoftwareWindow(Software software)
         {
             InitializeComponent();
+
+            if (software != null)
+                _software = software;
+
+            DataContext = _software;
+            combobox1.ItemsSource = Equipment_accountingEntities.GetContext().SoftwareType.ToList();
+        }
+
+        private void softwaretypeadd_Click(object sender, RoutedEventArgs e)
+        {
+            AddingType addingType = new AddingType();
+            addingType.Show();
         }
     }
 }
