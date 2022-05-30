@@ -24,17 +24,24 @@ namespace RegistrationAnd_AccountingOfEquipment
     /// </summary>
     public partial class DeviceWindow : Window
     {
+        private Device _device = new Device();
         Bitmap bitmap;
         SaveFileDialog saveFile = new SaveFileDialog();
-        public DeviceWindow()
+        public DeviceWindow(Device device)
         {
             InitializeComponent();
+
+            if (device != null)
+                _device = device;
+
+            DataContext = _device;
+            combobox1.ItemsSource = Equipment_accountingEntities.GetContext().DeviceType.ToList();
+            combobox2.ItemsSource = Equipment_accountingEntities.GetContext().DeviceStatus.ToList();
+            combobox3.ItemsSource = Equipment_accountingEntities.GetContext().Employee.ToList();
+            
+
         }
 
-        private void divassetab_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-
-        }
 
         private void Button_Create_Click(object sender, RoutedEventArgs e)
         {
@@ -56,6 +63,25 @@ namespace RegistrationAnd_AccountingOfEquipment
                     bitmap.Save(string.Concat(saveFile.FileName, ".png"), ImageFormat.Png);
                 }
             }
+        }
+
+        private void devisetabadd_Click(object sender, RoutedEventArgs e)
+        {
+            AddingType addingType = new AddingType();
+            addingType.Show();
+            
+        }
+
+        private void devicestatusadd_Click(object sender, RoutedEventArgs e)
+        {
+            AddingType addingStatus = new AddingType();
+            addingStatus.Show();
+        }
+
+        private void employeeadd_Click(object sender, RoutedEventArgs e)
+        {
+            EmployeeWindow employeeWindow = new EmployeeWindow(null);
+            employeeWindow.Show();
         }
     }
 }

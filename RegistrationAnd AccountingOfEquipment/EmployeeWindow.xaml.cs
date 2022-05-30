@@ -19,9 +19,17 @@ namespace RegistrationAnd_AccountingOfEquipment
     /// </summary>
     public partial class EmployeeWindow : Window
     {
-        public EmployeeWindow()
+        private Employee _employee = new Employee();
+        public EmployeeWindow(Employee employee)
         {
             InitializeComponent();
+
+            if (employee != null)
+                _employee = employee;
+
+            DataContext = _employee;
+            combobox1.ItemsSource = Equipment_accountingEntities.GetContext().Post.ToList();
+            combobox2.ItemsSource = Equipment_accountingEntities.GetContext().Department.ToList();
         }
     }
 }

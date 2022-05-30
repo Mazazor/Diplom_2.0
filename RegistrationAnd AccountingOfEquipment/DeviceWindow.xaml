@@ -47,29 +47,27 @@
                                     <Button Margin="5,10,5,5" Width="150"  Content="Создать QR код" Click="Button_Create_Click"></Button>
                                     <Button Margin="5,10,5,5" Width="150" Content="Сохранить QR код" Click="Button_Save_Click"></Button>
                                 </StackPanel>
-                                <TextBox x:Name="NameBox" Grid.Row="1" Grid.Column="1" Margin="5,5,5,5" HorizontalAlignment="Left" Width="250"/>
-                                <TextBox Grid.Row="2" Grid.Column="1" Margin="5,5,5,5" HorizontalAlignment="Left" Width="150"/>
+                                <TextBox x:Name="NameBox" Text="{Binding Name}" Grid.Row="1" Grid.Column="1" Margin="5,5,5,5" HorizontalAlignment="Left" Width="250"/>
+                                <TextBox Grid.Row="2" Text="{Binding InventoryNumber}"  Grid.Column="1" Margin="5,5,5,5" HorizontalAlignment="Left" Width="150"/>
                                 <StackPanel Grid.Row="3" Grid.Column="1" Margin="5,5,5,5" HorizontalAlignment="Left" Orientation="Horizontal">
-                                        <ComboBox  Width="150"></ComboBox>
-                                        <TextBlock Margin="5,0,0,0" x:Name="divasetabadd" TextDecorations="Underline" Text="Добавить" Foreground="red"/>
+                                    <ComboBox  Width="150" x:Name="combobox1" SelectedItem="{Binding DeviceType}" DisplayMemberPath="Name"/>
+                                    <Button Margin="5,0,0,0" x:Name="devisetabadd"  Content="Добавить" Foreground="red" Click="devisetabadd_Click"/>
                                 </StackPanel>
                                 <StackPanel Grid.Row="4" Grid.Column="1" Margin="5,5,5,5" HorizontalAlignment="Left" Orientation="Horizontal">
-                                    <ComboBox  Width="150"></ComboBox>
-                                    <TextBlock Margin="5,0,0,0" x:Name="statusadd" TextDecorations="Underline" Text="Добавить" Foreground="red"/>
+                                    <ComboBox  Width="150"  x:Name="combobox2" SelectedItem="{Binding DeviceStatus}" DisplayMemberPath="Name"/>
+                                    <Button Margin="5,0,0,0" x:Name="devicestatusadd"  Content="Добавить" Foreground="red" Click="devicestatusadd_Click"/>
                                 </StackPanel>
-                                <TextBox Grid.Row="5" Grid.Column="1" Margin="5,5,5,5" HorizontalAlignment="Left" Width="150"/>
-                                <DatePicker Grid.Row="6" Grid.Column="1" Margin="5,5,5,5" HorizontalAlignment="Left"  Width="150" IsDropDownOpen="False" SelectedDateFormat="Short" />
+                                <TextBox Grid.Row="5" Grid.Column="1" x:Name="textbox1" Text="{Binding Room1.Name}"  Margin="5,5,5,5" HorizontalAlignment="Left" Width="150"/>
+                                <DatePicker Grid.Row="6" Grid.Column="1" DataContext="{Binding DateOfPurchase}" Margin="5,5,5,5" HorizontalAlignment="Left"  Width="150" IsDropDownOpen="False" SelectedDateFormat="Short" />
                                 <StackPanel Grid.Row="7" Grid.Column="1" Margin="5,5,5,5" HorizontalAlignment="Left"  Orientation="Horizontal">
-                                    <TextBox Width="150"/>
+                                    <TextBox Width="150" Text="{Binding GuarantyPeriod}"/>
                                     <TextBlock Margin="5,0,0,0" TextDecorations="Underline" Text="Истёк гарантийный срок" Foreground="red"/>
                                 </StackPanel>
-                                <TextBox Grid.Row="8" Grid.Column="1" Margin="5,5,5,5" HorizontalAlignment="Left" Width="150"/>
+                                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Price}" Margin="5,5,5,5" HorizontalAlignment="Left" Width="150"/>
                                 <StackPanel Grid.Row="9" Grid.Column="1" Margin="5,5,5,5" HorizontalAlignment="Left" Orientation="Horizontal">
-                                    <ComboBox  Width="150"></ComboBox>
-                                    <TextBlock Margin="5,0,0,0" TextDecorations="Underline" Text="Добавить" Foreground="red"/>
+                                    <ComboBox  Width="150"  x:Name="combobox3" SelectedItem="{Binding Employee}" DisplayMemberPath="Name"/>
+                                    <Button Margin="5,0,0,0" x:Name="employeeadd"  Content="Добавить" Foreground="red" Click="employeeadd_Click"/>
                                 </StackPanel>
-                               
-                               
                             </Grid>
                         </StackPanel>
                     </TabItem.Content>

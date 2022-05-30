@@ -31,8 +31,9 @@ namespace RegistrationAnd_AccountingOfEquipment
         private void Button_Add_Click(object sender, RoutedEventArgs e)
         {
 
-            DeviceWindow equipmentwindow = new DeviceWindow();
+            DeviceWindow equipmentwindow = new DeviceWindow(null);
             equipmentwindow.Show();
+            Close();
             
         }
             
@@ -61,8 +62,8 @@ namespace RegistrationAnd_AccountingOfEquipment
         private void Button_Edit_Click(object sender, RoutedEventArgs e)
         {
 
-           // WindowEdit equipmentwindow = new WindowEdit((sender as Button).DataContext as Device);
-           // equipmentwindow.Show();
+            DeviceWindow equipmentwindow = new DeviceWindow((sender as Button).DataContext as Device);
+            equipmentwindow.Show();
             Close();
         }
 
@@ -83,7 +84,7 @@ namespace RegistrationAnd_AccountingOfEquipment
 
         private void Button_Add4_Click(object sender, RoutedEventArgs e)
         {
-            EmployeeWindow equipmentwindow = new EmployeeWindow();
+            EmployeeWindow equipmentwindow = new EmployeeWindow(null);
             equipmentwindow.Show();
             
         }
