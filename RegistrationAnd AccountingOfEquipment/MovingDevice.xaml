@@ -24,7 +24,7 @@
             </Grid.RowDefinitions>
             <StackPanel Margin="5,5,5,5">
                 <TextBlock Text="Устройство"/>
-                <TextBox Margin="0,5,5,5"/>
+                <TextBox Text="{Binding Device1.Name}" Margin="0,5,5,5"/>
             </StackPanel>
             <StackPanel Grid.Row="1" Margin="5,5,5,5">
                 <TextBlock Text="Выберите устройство из списка"/>
@@ -33,13 +33,13 @@
                     <Button Margin="5,0,0,0" Width="80" Content="Поиск"/>
                 </StackPanel>
             </StackPanel>
-            <DataGrid Margin="0,0,5,0" Grid.Row="2">
+            <DataGrid Margin="0,0,5,0" Grid.Row="2" x:Name="datagrid1" AutoGenerateColumns="False">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Инвентарный ноиер"/>
-                    <DataGridTextColumn Header="Наименование" Width="100"/>
-                    <DataGridTextColumn Header="Тип" Width="40"/>
-                    <DataGridTextColumn Header="Статус" Width="55"/>
-                    <DataGridTextColumn Header="Текущее местоположение"/>
+                    <DataGridTextColumn Binding="{Binding Device1.InventoryNumber}" Header="Инвентарный ноиер"/>
+                    <DataGridTextColumn Binding="{Binding Device1.Name}" Header="Наименование" Width="100"/>
+                    <DataGridTextColumn Binding="{Binding Device1.DeviceType1.Name}" Header="Тип" Width="40"/>
+                    <DataGridTextColumn Binding="{Binding Device1.DeviceStatus1.Name}" Header="Статус" Width="55"/>
+                    <DataGridTextColumn Binding="{Binding Room.Name}" Header="Текущее местоположение"/>
                 </DataGrid.Columns>
             </DataGrid>
             <StackPanel Grid.Row="3" Margin="0,5,0,0" Orientation="Horizontal">
@@ -49,11 +49,11 @@
             <StackPanel Grid.Row="4" Grid.ColumnSpan="2" Margin="0,5,0,0">
                 <StackPanel Orientation="Horizontal" >
                     <TextBlock Margin="5,5,5,5" Text="Прежнее местоположение"/>
-                    <TextBox Width="110" Margin="5,5,5,5"/>
+                    <TextBox Text="{Binding Room.Name}" Width="110" Margin="5,5,5,5"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" >
                     <TextBlock Margin="5,5,5,5" Text="Новое местоположение"/>
-                    <TextBox Width="110" Margin="20,5,5,5"/>
+                    <TextBox Text="{Binding Room1.Name}" Width="110" Margin="20,5,5,5"/>
                     <CheckBox Margin="5,5,5,5" Content="Изменить на текущее местоположение"/>
                 </StackPanel>
                 <StackPanel Margin="0,30,0,0" Orientation="Horizontal">
@@ -63,7 +63,7 @@
             </StackPanel>
             <StackPanel Margin="5,5,5,5" Grid.Column="1">
                 <TextBlock Text="Сотрудник, ответственный за перемещение устройства"/>
-                <TextBox Margin="0,5,5,5"/>
+                <TextBox Text="{Binding Employee1.Name}" Margin="0,5,5,5"/>
             </StackPanel>
             <StackPanel Grid.Column="1" Grid.Row="1" Margin="5,5,5,5">
                 <TextBlock Text="Выберите сотрудника из списка"/>
@@ -72,11 +72,11 @@
                     <Button Margin="5,0,0,0" Width="80" Content="Поиск"/>
                 </StackPanel>
             </StackPanel>
-            <DataGrid Margin="5,0,0,0" Grid.Column="1" Grid.Row="2">
+            <DataGrid Margin="5,0,0,0" x:Name="datagrid2" Grid.Column="1" Grid.Row="2" AutoGenerateColumns="False">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="ФИО" Width="175"/>
-                    <DataGridTextColumn Header="Должность" Width="100"/>
-                    <DataGridTextColumn Header="Отдел" Width="80"/>
+                    <DataGridTextColumn Binding="{Binding Name}" Header="ФИО" Width="175"/>
+                    <DataGridTextColumn Binding="{Binding Post1.Name}" Header="Должность" Width="100"/>
+                    <DataGridTextColumn Binding="{Binding Department1.Name}" Header="Отдел" Width="80"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>

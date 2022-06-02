@@ -29,6 +29,8 @@ namespace RegistrationAnd_AccountingOfEquipment
 
             DataContext = _software;
             combobox1.ItemsSource = Equipment_accountingEntities.GetContext().SoftwareType.ToList();
+            datagrid1.ItemsSource = Equipment_accountingEntities.GetContext().Device.ToList();
+            datagrid2.ItemsSource = Equipment_accountingEntities.GetContext().Device.ToList();
         }
 
         private void softwaretypeadd_Click(object sender, RoutedEventArgs e)

@@ -42,7 +42,7 @@
 
                                 <TextBox Grid.Row="1" Text="{Binding Name}" Grid.Column="1" Margin="5,5,5,5" HorizontalAlignment="Left" Width="250"/>
                                 <StackPanel Grid.Row="2" Grid.Column="1" Margin="5,5,5,5" HorizontalAlignment="Left" Orientation="Horizontal">
-                                    <ComboBox  Width="150" SelectedItem="{Binding SofrwareType}" DisplayMemberPath="Name" x:Name="combobox1"/>
+                                    <ComboBox  Width="150" x:Name="combobox1" SelectedItem="{Binding SofrwareType}" DisplayMemberPath="Name"/>
                                     <Button Margin="5,0,0,0" x:Name="softwaretypeadd"  Content="Добавить" Foreground="red" Click="softwaretypeadd_Click"/>
                                 </StackPanel>
                                 <TextBox Grid.Row="4" Text="{Binding LicenseKey}" Grid.Column="1" Margin="5,5,5,5" HorizontalAlignment="Left" Width="150"/>
@@ -70,13 +70,13 @@
 
                             <TextBlock Margin="5,10,5,7" VerticalAlignment="Bottom" Text="Устройства, на которых установленно данное ПО"/>
                             <StackPanel Grid.Row="1" VerticalAlignment="Top">
-                                <DataGrid VerticalAlignment="Top" Width="475" Height="255">
+                                <DataGrid x:Name="datagrid1" AutoGenerateColumns="False" VerticalAlignment="Top" Width="475" Height="255">
                                     <DataGrid.Columns>
-                                        <DataGridTextColumn Header="Инвентарный номер"  Binding="{Binding Name_Equipment.Name}" Width="130"/>
-                                        <DataGridTextColumn Header="Наименование" Binding="{Binding Quantity}" Width="100"/>
-                                        <DataGridTextColumn Header="Тип" Binding="{Binding Quantity}" Width="60"/>
-                                        <DataGridTextColumn Header="Статус" Binding="{Binding Quantity}" Width="60"/>
-                                        <DataGridTextColumn Header="Текущее местоположение" Binding="{Binding Quantity}" Width="140"/>
+                                        <DataGridTextColumn Header="Инвентарный номер"  Binding="{Binding InventoryNumber}" Width="130"/>
+                                        <DataGridTextColumn Header="Наименование" Binding="{Binding Name}" Width="100"/>
+                                        <DataGridTextColumn Header="Тип" Binding="{Binding DeviceType1.Name}" Width="60"/>
+                                        <DataGridTextColumn Header="Статус" Binding="{Binding DeviceStatus1.Name}" Width="60"/>
+                                        <DataGridTextColumn Header="Текущее местоположение" Binding="{Binding Room1.Name}" Width="165"/>
                                     </DataGrid.Columns>
                                 </DataGrid>
                                 <TextBlock TextWrapping="Wrap" Text="(Нажмите на устройство, чтобы удалить его из списка устройств, на котором установлено данное ПО"/>
@@ -85,13 +85,13 @@
                             <TextBox Grid.Column="1" Margin="5,5,5,7" Width="300" Height="15" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
                             <Button  Grid.Column="1" Content="Поиск" Margin="0,5,5,7" Height="25" Width="150" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
                             <StackPanel Grid.Column="1" Grid.Row="1" VerticalAlignment="Top">
-                                <DataGrid VerticalAlignment="Top" Width="475" Height="255">
+                                <DataGrid x:Name="datagrid2" AutoGenerateColumns="False" VerticalAlignment="Top" Width="475" Height="255">
                                     <DataGrid.Columns>
-                                        <DataGridTextColumn Header="Инвентарный номер"  Binding="{Binding Name_Equipment.Name}" Width="130"/>
-                                        <DataGridTextColumn Header="Наименование" Binding="{Binding Quantity}" Width="100"/>
-                                        <DataGridTextColumn Header="Тип" Binding="{Binding Quantity}" Width="60"/>
-                                        <DataGridTextColumn Header="Статус" Binding="{Binding Quantity}" Width="60"/>
-                                        <DataGridTextColumn Header="Текущее местоположение" Binding="{Binding Quantity}" Width="140"/>
+                                        <DataGridTextColumn Header="Инвентарный номер"  Binding="{Binding InventoryNumber}" Width="130"/>
+                                        <DataGridTextColumn Header="Наименование" Binding="{Binding Name}" Width="100"/>
+                                        <DataGridTextColumn Header="Тип" Binding="{Binding DeviceType1.Name}" Width="60"/>
+                                        <DataGridTextColumn Header="Статус" Binding="{Binding DeviceStatus1.Name}" Width="60"/>
+                                        <DataGridTextColumn Header="Текущее местоположение" Binding="{Binding Room1.Name}" Width="165"/>
                                     </DataGrid.Columns>
                                 </DataGrid>
                                 <TextBlock TextWrapping="Wrap" Text="(Нажмите на устройство, чтобы добавить его в список устройств, на котором установлено данное ПО"/>
