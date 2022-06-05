@@ -274,9 +274,7 @@
                                     </Grid.ColumnDefinitions>
                                     <DataGrid Height="355" Width="725" x:Name="DataGrid5" AutoGenerateColumns="False" IsReadOnly="True">
                                         <DataGrid.Columns>
-                                            <DataGridTextColumn Header="Название" Binding="{Binding Name_Equipment.Name}" Width="150"/>
-                                            <DataGridTextColumn Header="Количество" Binding="{Binding Quantity}" Width="80"/>
-                                            <DataGridTextColumn Header="Серийный номер" Binding="{Binding SerialNumber}" Width="200"/>
+
                                         </DataGrid.Columns>
                                     </DataGrid>
                                     <StackPanel Grid.Column="1" HorizontalAlignment="Left">

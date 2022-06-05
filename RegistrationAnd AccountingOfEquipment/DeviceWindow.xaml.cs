@@ -38,7 +38,7 @@ namespace RegistrationAnd_AccountingOfEquipment
             combobox1.ItemsSource = Equipment_accountingEntities.GetContext().DeviceType.ToList();
             combobox2.ItemsSource = Equipment_accountingEntities.GetContext().DeviceStatus.ToList();
             combobox3.ItemsSource = Equipment_accountingEntities.GetContext().Employee.ToList();
-            
+            DataGridCharacteristic.ItemsSource = Equipment_accountingEntities.GetContext().Characteristic.ToList();
 
         }
 

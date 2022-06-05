@@ -19,9 +19,17 @@ namespace RegistrationAnd_AccountingOfEquipment
     /// </summary>
     public partial class DeviceRepair : Window
     {
-        public DeviceRepair()
+        private RepairWork _repairwork = new RepairWork();
+        public DeviceRepair( RepairWork repairwork)
         {
             InitializeComponent();
+            if (repairwork != null)
+                _repairwork = repairwork;
+
+            DataContext = _repairwork;
+            DataGrid1.ItemsSource = Equipment_accountingEntities.GetContext().RepairWork.ToList();
+            DataGrid2.ItemsSource = Equipment_accountingEntities.GetContext().Employee.ToList();
+            combobox.ItemsSource = Equipment_accountingEntities.GetContext().DeviceStatus.ToList();
         }
     }
 }

@@ -98,14 +98,14 @@ namespace RegistrationAnd_AccountingOfEquipment
 
         private void Button_Add3_Click(object sender, RoutedEventArgs e)
         {
-            DeviceRepair equipmentwindow = new DeviceRepair();
+            DeviceRepair equipmentwindow = new DeviceRepair(null);
             equipmentwindow.Show();
             
         }
 
         private void Button_Add2_Click(object sender, RoutedEventArgs e)
         {
-            MovingDevice equipmentwindow = new MovingDevice();
+            MovingDevice equipmentwindow = new MovingDevice(null);
             equipmentwindow.Show();
 
         }

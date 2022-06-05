@@ -87,10 +87,10 @@
                             <TextBlock Margin="5,10,5,7" VerticalAlignment="Bottom" Text="Характеристики устройства"/>
                             <Button  Grid.Column="1" Content="Добавить характеристику" Margin="0,5,5,7" Height="25" Width="150" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
 
-                            <DataGrid Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Top" Height="255">
+                            <DataGrid x:Name="DataGridCharacteristic" AutoGenerateColumns="False" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Top" Height="255">
                                 <DataGrid.Columns>
-                                    <DataGridTextColumn Header="Характеристика" Binding="{Binding Name_Equipment.Name}" Width="150"/>
-                                    <DataGridTextColumn Header="Значение" Binding="{Binding Quantity}" Width="80"/>
+                                    <DataGridTextColumn Header="Характеристика" Binding="{Binding Name}" Width="150"/>
+                                    <DataGridTextColumn Header="Значение" Binding="{Binding Value}" Width="80"/>
                                 </DataGrid.Columns>
                             </DataGrid>
                         </Grid>

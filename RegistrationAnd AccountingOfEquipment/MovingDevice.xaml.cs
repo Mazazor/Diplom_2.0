@@ -19,9 +19,17 @@ namespace RegistrationAnd_AccountingOfEquipment
     /// </summary>
     public partial class MovingDevice : Window
     {
-        public MovingDevice()
+        private DeviceMovement _moving = new DeviceMovement();
+        public MovingDevice(DeviceMovement moving)
         {
             InitializeComponent();
+            if (moving != null)
+                _moving = moving;
+
+            DataContext = _moving;
+            datagrid1.ItemsSource = Equipment_accountingEntities.GetContext().DeviceMovement.ToList();
+            datagrid2.ItemsSource = Equipment_accountingEntities.GetContext().Employee.ToList();
+
         }
     }
 }

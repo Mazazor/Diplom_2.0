@@ -33,13 +33,13 @@
                     <Button Margin="5,0,0,0" Width="80" Content="Поиск"/>
                 </StackPanel>
             </StackPanel>
-            <DataGrid Margin="0,0,5,0" Grid.Row="2">
+            <DataGrid x:Name="DataGrid1" AutoGenerateColumns="False" Margin="0,0,5,0" Grid.Row="2">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Инвентарный ноиер"/>
-                    <DataGridTextColumn Header="Наименование" Width="100"/>
-                    <DataGridTextColumn Header="Тип" Width="40"/>
-                    <DataGridTextColumn Header="Статус" Width="55"/>
-                    <DataGridTextColumn Header="Текущее местоположение"/>
+                    <DataGridTextColumn Binding="{Binding Device1.InventoryNumber}" Header="Инвентарный ноиер"/>
+                    <DataGridTextColumn Binding="{Binding Device1.Name}" Header="Наименование" Width="100"/>
+                    <DataGridTextColumn Binding="{Binding Device1.DeviceType1.Name}" Header="Тип" Width="40"/>
+                    <DataGridTextColumn Binding="{Binding Device1.DeviceStatus1.Name}" Header="Статус" Width="55"/>
+                    <DataGridTextColumn Binding="{Binding Device1.Room1.Name}" Header="Текущее местоположение"/>
                 </DataGrid.Columns>
             </DataGrid>
             <StackPanel Grid.Row="3" Margin="0,5,0,0" Orientation="Horizontal">
@@ -50,7 +50,7 @@
                 <CheckBox Content="Работы ещё не завершены"/>
                 <CheckBox Content="Изменить статус устройства"/>
                 <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
-                    <ComboBox Width="250"></ComboBox>
+                    <ComboBox  Width="250" x:Name="combobox" SelectedItem="{Binding DeviceStatus}" DisplayMemberPath="Name" />
                     <TextBlock Margin="5,0,0,0" TextDecorations="Underline" Text="Добавить" Foreground="red"/>
                 </StackPanel>
                 <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
@@ -69,18 +69,18 @@
                     <Button Margin="5,0,0,0" Width="80" Content="Поиск"/>
                 </StackPanel>
             </StackPanel>
-            <DataGrid Margin="5,0,0,0" Grid.Column="1" Grid.Row="2">
+            <DataGrid x:Name="DataGrid2" AutoGenerateColumns="False" Margin="5,0,0,0" Grid.Column="1" Grid.Row="2">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="ФИО" Width="175"/>
-                    <DataGridTextColumn Header="Должность" Width="100"/>
-                    <DataGridTextColumn Header="Отдел" Width="80"/>
+                    <DataGridTextColumn Binding="{Binding Name}" Header="ФИО" Width="175"/>
+                    <DataGridTextColumn Binding="{Binding Post1.Name}" Header="Должность" Width="100"/>
+                    <DataGridTextColumn Binding="{Binding Department1.Name}" Header="Отдел" Width="80"/>
                 </DataGrid.Columns>
             </DataGrid>
             <StackPanel Margin="5,0,0,0" Grid.Column="1" Grid.Row="3">
                 <TextBlock Text="Описание проведённых работ"/>
             </StackPanel>
             <StackPanel Margin="5,0,0,0" Grid.Column="1" Grid.Row="4">
-                <TextBox  Height="127"/>
+                <TextBox Text="{Binding Description}" x:Name="textdescription" Height="127"/>
             </StackPanel>
         </Grid>
     </Border>
